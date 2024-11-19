@@ -1,0 +1,47 @@
+
+
+    // useEffect(() => {
+    //     let isMounted = true;
+
+    //     const fetchSession = async () => {
+    //         console.log('Fetching session...');
+    //         const { data: session, error } = await supabase.auth.getSession();
+    //         console.log('Session data:', session);
+
+    //         if (error) {
+    //             console.error('Error fetching session:', error.message);
+    //             return;
+    //         }
+
+    //         if (isMounted) {
+    //             if (session?.session?.user) {
+    //                 const fullUser = await fetchUser(session.session.user);
+    //                 setUser(fullUser);
+    //             } else {
+    //                 setUser(null);
+    //             }
+    //         }
+    //     };
+
+    //     fetchSession();
+
+    //     // Set up auth state listener
+    //     const authSubscription = supabase.auth.onAuthStateChange(async (_event, session) => {
+    //         if (isMounted) {
+    //             if (session?.user) {
+    //                 const fullUser = await fetchUser(session.user);
+    //                 setUser(fullUser);
+    //             } else {
+    //                 setUser(null);
+    //             }
+    //         }
+    //     });
+
+    //     // Cleanup subscription on unmount
+    //     return () => {
+    //         isMounted = false;
+    //         if (authSubscription && typeof authSubscription.unsubscribe === 'function') {
+    //             authSubscription.unsubscribe(); // Safely call unsubscribe
+    //         }
+    //     };
+    // }, []);
